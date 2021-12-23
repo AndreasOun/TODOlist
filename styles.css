@@ -11,6 +11,11 @@
   min-height: 100vh;
 }
 
+body {
+  background-image: -webkit-gradient(linear, left top, right top, from(#020024), color-stop(0%, #137909), color-stop(59%, #06aa78), to(#00d4ff));
+  background-image: linear-gradient(90deg, #020024 0%, #137909 0%, #06aa78 59%, #00d4ff 100%);
+}
+
 header {
   font-size: 1.5rem;
 }
@@ -50,8 +55,118 @@ form button:hover {
   background-image: linear-gradient(90deg, #020024 0%, #137909 0%, #06aa78 59%, #00d4ff 100%);
 }
 
-body {
-  background-image: -webkit-gradient(linear, left top, right top, from(#020024), color-stop(0%, #137909), color-stop(59%, #06aa78), to(#00d4ff));
-  background-image: linear-gradient(90deg, #020024 0%, #137909 0%, #06aa78 59%, #00d4ff 100%);
+.todo-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.todo-list {
+  min-width: 30%;
+  list-style: none;
+}
+
+.todo {
+  margin: 0.5rem;
+  background: white;
+  color: black;
+  font-size: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.todo li {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.trash-btn,
+.complete-btn {
+  background: #00d4ff;
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.complete-btn {
+  background: #137909;
+}
+
+todo-item {
+  padding: 0rem 0.5rem;
+}
+
+.fa-trash,
+.fa-check {
+  pointer-events: none;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.fall {
+  -webkit-transform: translateY(8rem) rotateZ(20deg);
+          transform: translateY(8rem) rotateZ(20deg);
+  opacity: 0;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+}
+
+.select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+select {
+  color: #137909;
+  width: 10rem;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  background: #00d4ff;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  pointer-events: none;
+}
+
+.select:hover::after {
+  background: white;
+  color: #137909;
 }
 /*# sourceMappingURL=styles.css.map */
